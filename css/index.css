@@ -1,0 +1,191 @@
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    font-style: normal;
+    color: #115599;
+	background: -webkit-linear-gradient(left, rgba(181, 181, 211, 0.3), rgba(203, 203, 223, 0.3)); 
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Logo */
+div.top_1_container {
+	margin: auto;
+}
+div.top_1 {
+	margin: auto;
+    position: relative;
+    display: block;
+    width: 900px;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    z-index: 10;
+}
+div.logo_str {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    height: 50px;
+}
+div.logo_img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+img.logo_img {
+    width: 90px;
+    height: 45px;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+a.logo {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    font-style: italic;
+    text-shadow: 2px 2px 1px #7799ee;
+    color: #3377dd;
+	text-decoration: none;
+}
+div.about_links {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+a.about_links {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    font-style: normal;
+    text-shadow: 2px 2px 1px #7799ee;
+    color: #3377dd;
+    padding: 10px 10px;
+}
+
+
+/* Ticker filter */
+div.top_2_search {
+    margin: auto;
+    position: relative;
+    height: 50px;
+    width: 900px;
+}
+div.search_label {
+    display: inline-block;
+	position: absolute;
+	left: 10px;
+    top: 10px;
+}
+label.search_label {
+    font-weight: bold;
+}
+div.ticker_filter {
+    display: inline-block;
+	position: absolute;
+	left: 115px;
+    width: 540px;
+}
+input.ticker_filter {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+}
+div.last_updated {
+    display: inline-block;
+	position: absolute;
+    left: 690px;
+    top: 10px;
+}
+
+
+
+/* Ticker tables */
+div.center_headers {
+	margin: 0 auto;
+	width: 500px;
+}
+
+div.ticker_table {
+    position: relative;
+    display: block;
+    width: 600px;
+	height: 85%;
+    margin: auto;
+    overflow: auto;
+    border-radius: 20px;
+}
+div.ticker_table::-webkit-scrollbar {
+    width: 9px;
+    background-color: #EEEEFF;
+    opacity: 0.7;
+}
+
+table.tickers {
+    padding: 20px;
+    border: solid 3px white;
+    background: -webkit-linear-gradient(left, rgba(0, 255, 255, 0.3), rgba(255, 255, 0, 0.3));    
+    border-radius: 20px;
+	max-height: 85%;
+}
+td {
+    text-align: center;
+    border: solid 3px transparent;
+	color: #003366;
+}
+th {
+    border: solid 3px transparent;
+    cursor: pointer;
+}
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+img.mood{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+
+/* Footer: contact form link */
+div.footer {
+    width:100%;
+    margin: 20px 0 0 0;
+    padding: 0;
+    border: 0;
+    left: 0;
+    bottom: 0;
+    position: static;
+	background: -webkit-linear-gradient(left, rgba(222, 255, 255, 0.8), rgba(188, 188, 188, 0.3));
+	height: 40px;
+}
+div.top_offset {
+	position: relative;
+	top: 10px;
+    width: 100%;
+}
+div.center_contact {
+	margin: auto;
+	width: 200px;
+}
+a.contact {
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    font-style: normal;
+    color: #6688aa;
+	text-decoration: none;
+}

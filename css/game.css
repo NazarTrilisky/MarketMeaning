@@ -1,0 +1,78 @@
+canvas {
+	border:1px solid #d3d3d3;
+	background-color: #f1f1f1;
+}
+body {
+	background-color: cyan;
+}
+div.center {
+	margin: auto;
+	width: 350px;
+	padding: 20px 0 20px 0;
+}
+a {
+	margin: 20px 0 20px 0;
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	font-style: normal;
+	color: #111111;
+	text-decoration: none;
+}
+
+#slidecontainer {
+	width: 100%;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 300px;
+	height: 25px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #4CAF50;
+	cursor: pointer;
+}
+
+.button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	position: relative;
+	left: 80px;
+}
+#myRange{
+	transform: rotateY(180deg);
+}
+
+label.difficulty_easy {
+	position: relative;
+	left: 0px;
+}
+label.difficulty_tough {
+	position: relative;
+	left: 150px;
+}
+
+div.setup_controls {
+	background-color: cyan;
+	border: solid 2px black;
+}

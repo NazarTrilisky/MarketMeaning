@@ -1,0 +1,19 @@
+.drop {
+	background:-webkit-gradient( linear, 0% 0%,0% 100%, from(rgba(150,150,205,1)), to(rgba(200,200,255,0.6)) );
+	background: -moz-linear-gradient(bottom, rgba(200,200,255,1) 0%, rgba(150,150,205,.6) 100%);
+	width:2px;
+	height:89px;
+	position: absolute;
+	bottom:200px;
+	-webkit-animation: fall .63s linear infinite;
+	-moz-animation: fall .63s linear infinite;
+	z-index: 11;
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+	to {margin-top:300px;}
+}
+@-moz-keyframes fall {
+	to {margin-top:300px;}
+}

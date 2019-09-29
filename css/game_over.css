@@ -1,0 +1,18 @@
+body {
+	background-color: red;
+}
+div.center {
+	margin: auto;
+	width: 350px;
+	padding: 20px 0 20px 0;
+}
+a {
+	margin: 20px 0 20px 0;
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	font-style: normal;
+	color: #111111;
+	text-decoration: none;
+}

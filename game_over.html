@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Over</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/game_over.css"/>
+	<script>
+		function setup() {
+			var query = window.location.search.substring(1);
+			document.getElementById("score_span").innerHTML = parseInt(query.replace(/[^0-9\.]/g, ''), 10);;
+		}
+	</script>
+</head>
+<body onload="setup()">
+	<div>
+		<div class="center">
+			<h1>Your Score: <span id="score_span"></span></h1>
+		</div>
+		<div class="center">
+			<a href="game.html">Start New Game</a>
+		</div>
+		<div class="center">
+			<a href="index.html">Return to Market Sentiment</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mr. Market's Mood</title>
+    <link rel="shortcut icon" type="image/ico" href="images/logo.ico"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script src="js/faces.js"></script>
+	<script src="js/table.js"></script>
+    <script>
+		function add_table_header_sorting() {
+			let tbl_1_ticker = document.getElementById("tbl_1_ticker");
+			let tbl_1_company = document.getElementById("tbl_1_company");
+			let tbl_1_sentiment = document.getElementById("tbl_1_sentiment");
+			tbl_1_ticker.onclick = () => TableManager.sort_table("twitter_table", 0);
+			tbl_1_company.onclick = () => TableManager.sort_table("twitter_table", 1);
+			tbl_1_sentiment.onclick = () => TableManager.sort_table("twitter_table", 2);
+			
+			let tbl_2_ticker = document.getElementById("tbl_2_ticker");
+			let tbl_2_company = document.getElementById("tbl_2_company");
+			let tbl_2_sentiment = document.getElementById("tbl_2_sentiment");
+			tbl_2_ticker.onclick = () => TableManager.sort_table("reuters_table", 0);
+			tbl_2_company.onclick = () => TableManager.sort_table("reuters_table", 1);
+			tbl_2_sentiment.onclick = () => TableManager.sort_table("reuters_table", 2);
+		}
+        function setup() {
+			// add face logo animation
+			let faces_obj = new Faces();
+			faces_obj.add_face_handler_moods();
+			
+			// enable table sorting
+			add_table_header_sorting();
+			
+			// clean up tickers based on user-specified filter
+			let table_mgr = new TableManager();
+			// round sentiment of given table's index 2 column to two decimal points
+            TableManager.scale_sentiment("twitter_table", 2);
+			TableManager.scale_sentiment("reuters_table", 2);
+			// add an emoji corresponding to the sentiment
+			TableManager.add_emojis("twitter_table", 2);
+			TableManager.add_emojis("reuters_table", 2);
+			// table name, text input field ID (which has tickers to keep), index of tickers column
+			table_mgr.add_ticker_filter_listener("twitter_table", "ticker_filter_outsiders", 0);
+			table_mgr.add_ticker_filter_listener("reuters_table", "ticker_filter_outsiders", 0);
+        }
+    </script>
+	
+</head>
+<body onload="setup()">
+	<div class="top_1_container">
+		<div class="top_1">
+			<div class="logo_img">
+				<img id="logo_img" alt="logo image" class="logo_img" src="images/logo_1.png"/>
+			</div>
+			<div class="logo_str">
+				<a href="index.html" class="logo">Market Meaning</a>
+			</div>
+			<div class="about_links">
+				<a class="about_links" href="insider_mood.html">Insider Mood</a>
+				<a class="about_links" href="outsider_mood.html">Outsider Mood</a>
+			</div>
+		</div>
+	</div>
+
+    <div class="top_2_search">
+        <div class="search_label">
+            <label class="search_label">Filter tickers:&nbsp;</label>
+        </div>
+        <div class="ticker_filter">
+            <input type="text" class="ticker_filter" id="ticker_filter_outsiders"
+			placeholder="Enter tickers to keep. E.g. 'BRK.A, FFIV,GOOG', then hit Enter."/>
+        </div>
+        <div class="last_updated">
+            <label class="filter">Updated:&nbsp;</label>
+            <span id="updated_time">Dec 8, 2017</span>
+        </div>
+    </div>
+	
+	<div class="center_headers">
+		<h1>Twitter Sentiment</h1>
+	</div>
+	<div class="ticker_table center">
+        <table id="twitter_table" class="tickers">
+            <thead>
+                <tr>
+                    <th id="tbl_1_ticker" title="Filter to 300 rows or fewer to sort">Ticker</th>
+                    <th id="tbl_1_company" title="Filter to 300 rows or fewer to sort">Company</th>
+                    <th colspan="2" id="tbl_1_sentiment" title="Filter to 300 rows or fewer to sort">Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+				<script src="js/twitter_table.js"></script>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="center_headers">
+		<h1>Reuters Sentiment</h1>
+	</div>
+	
+	<div class="ticker_table center">
+        <table id="reuters_table" class="tickers">
+            <thead>
+                <tr>
+                    <th id="tbl_2_ticker" title="Filter to 300 rows or fewer to sort">Ticker</th>
+                    <th id="tbl_2_company" title="Filter to 300 rows or fewer to sort">Company</th>
+                    <th colspan="2" id="tbl_2_sentiment" title="Filter to 300 rows or fewer to sort">Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+				<script src="js/reuters_table.js"></script>
+			</tbody>
+		</table>
+	</div>
+	<div class="footer">
+		<div class="center_contact top_offset">
+			<a class="contact" href="contact.html">Contact Site Owner</a>
+        </div>
+	</div>
+</body>
+</html>

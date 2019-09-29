@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mr. Market's Mood</title>
+    <link rel="shortcut icon" type="image/ico" href="images/logo.ico"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/contact.css"/>
+	<script src="js/faces.js"></script>
+    <script>
+        function setup() {
+			// add face logo animation
+			let faces_obj = new Faces();
+			faces_obj.add_face_handler_moods();
+        }
+    </script>
+</head>
+<body onload="setup()">
+	<div class="top_1_container">
+		<div class="top_1">
+			<div class="logo_img">
+				<img id="logo_img" alt="logo image" class="logo_img" src="images/logo_1.png"/>
+			</div>
+			<div class="logo_str">
+				<a href="index.html" class="logo">Market Meaning</a>
+			</div>
+			<div class="about_links">
+				<a class="about_links" href="insider_mood.html">Insider Mood</a>
+				<a class="about_links" href="outsider_mood.html">Outsider Mood</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="center_headers">
+		<h1>Send an email to the site owner:</h1>
+	</div>
+	
+	<div class="center_headers">
+		<form action="mailto:asmirnovsky@gmail.com" method="post" enctype="text/plain">
+		<div class="spacer">
+			Your email:<br/>
+			<input type="email" name="reply_email" size="50" required>
+		</div>
+		<div class="spacer">
+			Subject:<br/>
+			<input type="text" name="subject" size="50" required>
+		</div>
+		<div class="spacer">
+			Message:<br/>
+			<input type="text" class="message" name="message" size="50" required><br/>
+		</div>
+		<div class="spacer">
+			<input type="submit" value="Send">
+		</div>
+		</form>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obstacle Game</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="css/game.css"/>
+	<script src="js/game.js"></script>
+</head>
+<body>
+	<div>
+		<div class="center">
+			<h1 id="choose_speed">Choose your speed:</h1>
+		</div>
+		<div class="center">
+			<div>
+				<label id="label1" class="difficulty_easy">Very Easy</label>
+				<label id="label2" class="difficulty_tough">Very Difficult</label>
+			</div>
+			<div id="slidecontainer">
+				<input type="range" min="1" max="50" value="1" step="1" class="slider" id="myRange">
+			</div>
+		</div>
+		<div class="center">
+			<button id="start_button" onclick="start_click()" class="button">Start Game</button>
+		</div>
+	</div>
+	
+</body>
+</html>

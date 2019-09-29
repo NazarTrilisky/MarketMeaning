@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mr. Market's Mood</title>
+    <link rel="shortcut icon" type="image/ico" href="images/logo.ico"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script src="js/faces.js"></script>
+	<script src="js/table.js"></script>
+    <script>
+		function add_table_header_sorting() {
+			let tbl_ticker = document.getElementById("tbl_ticker");
+			let tbl_company = document.getElementById("tbl_company");
+			let tbl_sentiment = document.getElementById("tbl_sentiment");
+			tbl_ticker.onclick = () => TableManager.sort_table("glassdoor_table", 0);
+			tbl_company.onclick = () => TableManager.sort_table("glassdoor_table", 1);
+			tbl_sentiment.onclick = () => TableManager.sort_table("glassdoor_table", 2);
+		}
+        function setup() {
+			// add face logo animation
+			let faces_obj = new Faces();
+			faces_obj.add_face_handler_moods();
+			
+			// enable table sorting
+			add_table_header_sorting();
+			
+			// clean up tickers based on user-specified filter
+			let table_mgr = new TableManager();
+			// round sentiment of given table's index 2 column to two decimal points
+            TableManager.round_table_nums("glassdoor_table", 2);
+			// add an emoji corresponding to the sentiment
+			TableManager.add_emojis("glassdoor_table", 2);
+			// table name, text input field ID (which has tickers to keep), index of tickers column
+			table_mgr.add_ticker_filter_listener("glassdoor_table", "ticker_filter_glassdoor", 0);
+        }
+    </script>
+</head>
+<body onload="setup()">
+	<div class="top_1_container">
+		<div class="top_1">
+			<div class="logo_img">
+				<img id="logo_img" alt="logo image" class="logo_img" src="images/logo_1.png"/>
+			</div>
+			<div class="logo_str">
+				<a href="index.html" class="logo">Market Meaning</a>
+			</div>
+			<div class="about_links">
+				<a class="about_links" href="insider_mood.html">Insider Mood</a>
+				<a class="about_links" href="outsider_mood.html">Outsider Mood</a>
+			</div>
+		</div>
+	</div>
+
+    <div class="top_2_search">
+        <div class="search_label">
+            <label class="search_label">Filter tickers:&nbsp;</label>
+        </div>
+        <div class="ticker_filter">
+            <input type="text" class="ticker_filter" id="ticker_filter_glassdoor"
+			placeholder="Enter tickers to keep. E.g. 'BRK.A, FFIV,GOOG', then hit Enter."/>
+        </div>
+        <div class="last_updated">
+            <label class="filter">Updated:&nbsp;</label>
+            <span id="updated_time">Dec 8, 2017</span>
+        </div>
+    </div>
+	
+    <div class="center_headers">
+		<h1>Glassdoor Sentiment</h1>
+	</div>
+    <div class="ticker_table center">
+        <table id="glassdoor_table" class="tickers">
+            <thead>
+                <tr>
+                    <th id="tbl_ticker" title="Filter to 300 rows or fewer to sort">Ticker</th>
+                    <th id="tbl_company" title="Filter to 300 rows or fewer to sort">Company</th>
+                    <th colspan="2" id="tbl_sentiment" title="Filter to 300 rows or fewer to sort">Sentiment</th>
+                </tr>
+            </thead>
+            <tbody>
+				<script src="js/glassdoor_table.js"></script>
+			</tbody>
+		</table>
+	</div>
+	<div class="footer">
+		<div class="center_contact top_offset">
+			<a class="contact" href="contact.html">Contact Site Owner</a>
+        </div>
+	</div>
+</body>
+</html>
