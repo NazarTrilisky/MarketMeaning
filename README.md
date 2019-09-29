@@ -1,5 +1,5 @@
 # MarketMeaning
-This is an earlier draft of marketmeaning.com, which displays stock sentiment differences between insider and outsider mood.
+This is an earlier draft of http://marketmeaning.com, which displays stock sentiment differences between insider and outsider mood.
 
 Insider mood is Glassdoor, while outsider mood is from Twitter and Reuters.  Such a sentiment comparison is a good signal for finding under and over-priced stocks.
 
